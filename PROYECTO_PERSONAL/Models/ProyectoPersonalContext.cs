@@ -20,8 +20,7 @@ public partial class ProyectoPersonalContext : DbContext
     public virtual DbSet<Solicitud> Solicitudes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=SQL8002.site4now.net;Initial Catalog=db_a9c576_dbproyecto;User Id=db_a9c576_dbproyecto_admin;Password=x975p83s_-eDmcK");
-    //=> optionsBuilder.UseSqlServer("Server=DESKTOP-JVH12V7\\SQLEXPRESS;Database=PROYECTO_PERSONAL;Trusted_Connection=True;Encrypt=False");
+        => optionsBuilder.UseSqlServer("Server=DESKTOP-JVH12V7\\SQLEXPRESS;Database=PROYECTO_PERSONAL;Trusted_Connection=True;Encrypt=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
