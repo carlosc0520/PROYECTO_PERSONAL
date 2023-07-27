@@ -8,10 +8,21 @@ const SobreMi = () => {
         window.open("/CV.pdf", "_blank")
     }
 
+    const calcularEdad = (year, day, month) => {
+        const hoy = new Date()
+        const fechaNacimiento = new Date(year, month - 1, day)
+        const edad = hoy.getFullYear() - fechaNacimiento.getFullYear()
+        const diferenciaMeses = hoy.getMonth() - fechaNacimiento.getMonth()
+        if (diferenciaMeses < 0 || (diferenciaMeses === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+            edad--
+        }
+        return edad || ""
+    }
+
 
     return (
         <div id="sobre-mi" className='my-20 max-w-screen-xl m-auto'>
-            <h3 className='text-center text-3xl font-bold'>Sobre <b style={{ color: '#7c3aed'}}>Mi</b></h3>
+            <h3 className='text-center text-3xl font-bold'>Sobre <b style={{ color: '#7c3aed' }}>Mi</b></h3>
             <div className="flex flex-col lg:flex-row gap-14">
                 <div className="w-full lg:w-1/2 flex justify-center items-center">
                     <object data="/male.svg" type="image/svg+xml" className="rounded-full w-96 h-64 p-0 m-0 mt-10 md:mt-0" />
@@ -54,7 +65,7 @@ const SobreMi = () => {
                             </div>
                             <span className="font-bold">Edad:</span>
                         </div>
-                        <span className='col-span-full md:col-span-4 pl-14 lg:pl-6 w-full md:-ml-10'>22 Años</span>
+                        <span className='col-span-full md:col-span-4 pl-14 lg:pl-6 w-full md:-ml-10'>{calcularEdad(2001, 5, 5)} Años</span>
                     </div>
                     <div className='text-xl grid grid-cols-6 items-center'>
                         <div className='flex items-center gap-x-3 col-span-full md:col-span-2'>

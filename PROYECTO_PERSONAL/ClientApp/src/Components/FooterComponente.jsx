@@ -17,13 +17,13 @@ const FooterComponente = () => {
             </h5>
             <div className="mt-6 lg:mb-0 mb-6">
               <button className="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-                <FontAwesomeIcon icon={faFacebook} />
+                <a target='_blank' href="https://www.facebook.com/CarlosCarbajal.matias05"><FontAwesomeIcon icon={faFacebook} /></a>
               </button>
               <button className="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
                 <FontAwesomeIcon icon={faWhatsapp} />
               </button>
               <button className="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-                <FontAwesomeIcon icon={faLinkedin} />
+                <a target='_blank' href='https://www.linkedin.com/in/carlos-carbajal-matias-35a1b8188/'><FontAwesomeIcon icon={faLinkedin} /></a>
               </button>
               <button className="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
                 <FontAwesomeIcon icon={faInstagram} />
