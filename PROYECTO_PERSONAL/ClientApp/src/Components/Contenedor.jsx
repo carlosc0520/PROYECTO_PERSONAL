@@ -38,9 +38,7 @@ const Contenedor = () => {
     }
 
     return (
-        <Container style={{
-            margin: '20px 0px',
-        }}>
+        <Container>
             <Header>
                 <HeaderComponente />
             </Header>

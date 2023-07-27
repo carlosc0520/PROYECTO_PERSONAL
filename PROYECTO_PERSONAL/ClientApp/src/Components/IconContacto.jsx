@@ -13,7 +13,7 @@ const IconContacto = () => {
                 placement="leftStart"
                 speaker={
                     <Tooltip arrow={false}>
-                        Escríbenos <span role="img" aria-label="happy-face">😊 .....</span>
+                        Escríbeme <span role="img" aria-label="happy-face">😊 .....</span>
                     </Tooltip>
                 }>
                 <button className="floating-button" onClick={handleWhatsAppClick}>

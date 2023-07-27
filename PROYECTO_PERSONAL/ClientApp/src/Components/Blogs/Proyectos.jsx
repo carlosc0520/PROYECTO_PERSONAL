@@ -29,8 +29,8 @@ const Proyectos = ({
 
 
     return (
-        <div id="proyectos" className='mb-10'>
-            <h3 className='text-center text-3xl font-bold mb-5'>Proyectos</h3>
+        <div id="proyectos" className='my-10 md:my-20'>
+            <h3 className='text-center text-3xl font-bold mb-5 md:mb-14'>Mis Proyect<b style={{ color: '#7c3aed'}}>os</b></h3>
             <Carousel
                 responsive={responsive(proyectosDB.length)}
                 infinite={true}
@@ -38,33 +38,37 @@ const Proyectos = ({
                 centerMode={document.documentElement.clientWidth > 1024 ? true : false}
                 autoPlaySpeed={2000}
                 focusOnSelect={true}
+                className='h-auto'
+                style={{"@media (min-width: 640px)": {
+					gap: "300px !important",
+				}}}
             >
                 {proyectosDB.map((proyecto) => (
-                    <div className='card-proyecto bg-white rounded-lg shadow-lg p-4 m-4 flex flex-col gap-3' key={proyecto.id}
+                    <div className='card-proyecto bg-white rounded-lg shadow-lg hover:shadow-xl p-4 m-6 flex flex-col gap-3 max-h-96 min-w-[300px] max-w-[400px] mx-auto overflow-hidden mr-96 md:mr-0' key={proyecto.id}
                     >
                         {/* <div
                             className='flex justify-center'
                         >
                             <img src={proyecto.img} alt={proyecto.nombre} className='rounded-lg' />
                         </div> */}
-                        <iframe src={`https://${proyecto.link}`} title="Otra Página" className="card-iframe"></iframe>
+                        <iframe src={`https://${proyecto.link}`} title="Otra Página" className="card-iframe rounded overflow-hidden"></iframe>
 
-                        <h3 className='text-center text-2xl font-bold'>{proyecto.nombre}</h3>
+                        <h3 className='text-center text-xl font-bold h-32 max-h-full min-h-full block'>{proyecto.nombre}</h3>
                         {/* <p className='text-center'>{proyecto.descripcion}</p> */}
-                        <p className='text-center'><span>Fecha Creción:</span>{proyecto.fcreacion}</p>
-                        <p className='text-center'><span>Tecnologias:</span></p>
-                        <ul>
+                        <p className='text-center'><span>Creado el </span>{proyecto.fcreacion}</p>
+                        <p className='text-center'><span>Tecnologias Usadas</span></p>
+                        <div className='flex flex-wrap h-32 min-h-full justify-center gap-x-3 gap-y-2 mb-10'>
                             {proyecto.tecnologias?.map((tecnologia, index) => (
-                                <li key={index + 1}>- {tecnologia}</li>
+                                <span className='bg-gray-400 rounded text-white py-0.5 px-2 text-xs' key={index + 1}>{tecnologia}</span>
                             ))}
-                        </ul>
+                        </div>
                         <div className='flex justify-center'>
-                            <a className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full' onClick={() => window.open(`https://${proyecto.link}`, "_blank")}>Ir a</a>
+                            <a className='bg-violet-500 timeout hover:bg-violet-600 font-bold py-2 px-4 rounded hover:cursor-pointer hover:text-white text-white no-underline hover:no-underline font-bold py-2 px-4' onClick={() => window.open(`https://${proyecto.link}`, "_blank")}>Revisar Proyecto</a>
                         </div>
                     </div>
                 ))}
 
-            </Carousel>;
+            </Carousel>
         </div>
     )
 }

@@ -46,8 +46,8 @@ const Contacto = () => {
     }
 
     return (
-        <div id="contacto" className='mb-10'>
-            <h3 className='text-center text-3xl font-bold mb-5'>Contacto</h3>
+        <div id="contacto" className='mb-10 max-w-screen-xl md:m-auto'>
+            <h3 className='text-center text-3xl font-bold mb-5'>Contácta<b style={{ color: '#7c3aed'}}>me</b></h3>
             <Grid fluid
 
             >
@@ -61,6 +61,7 @@ const Contacto = () => {
                             onChange={formValue => setFormValue(formValue)}
                             onCheck={formError => setFormError(formError)}
                             type="submit"
+                            className='max-w-lg md:bg-gray-200 md:p-5 md:rounded-md md:mt-10'
                         >
 
                             <InputText value={formValue?.nombre} name="nombre" label="Nombre" error={formError?.nombre} isRequired={true} />
@@ -69,18 +70,18 @@ const Contacto = () => {
 
                             <Form.Group>
                                 <ButtonToolbar>
-                                    <Button appearance="primary"
+                                    <Button
                                         onClick={handleSubmit}
-                                        className='w-full lg:w-1/3 flex justify-center items-center'
-                                    >ENVIAR</Button>
+                                        style={{backgroundColor: '#8b5cf6', color: '#FFF'}}
+                                    ><b>Enviar Mensaje</b></Button>
                                 </ButtonToolbar>
                             </Form.Group>
                         </Form>
                     </Col>
                     <Col xs={24} sm={24} md={10}
-                        className="flex justify-center items-center"
+                        className="flex justify-center items-center m-auto"
                     >
-                        <img src="/img/contacto.webp" alt="sobre-mi" className="w-96 h-80 p-0 m-0" />
+                        <object data="/contact-hand.svg" type="image/svg+xml" className="p-0 m-0" />
                     </Col>
                 </Row>
             </Grid>
