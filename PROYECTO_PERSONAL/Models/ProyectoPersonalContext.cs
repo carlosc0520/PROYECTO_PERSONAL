@@ -20,7 +20,7 @@ public partial class ProyectoPersonalContext : DbContext
     public virtual DbSet<Solicitud> Solicitudes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=SQL8002.site4now.net;Initial Catalog=db_a9c576_dbproyecto;User Id=db_a9c576_dbproyecto_admin;Password=x975p83s_-eDmcK");
+        => optionsBuilder.UseSqlServer("Data Source=SQL5107.site4now.net;Initial Catalog=db_a9ec8e_proyectos;User Id=db_a9ec8e_proyectos_admin;Password=ING052001");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -30,7 +30,7 @@ const Proyectos = ({
 
     return (
         <div id="proyectos" className='my-10 md:my-20'>
-            <h3 className='text-center text-3xl font-bold mb-5 md:mb-14'>Mis Proyect<b style={{ color: '#7c3aed'}}>os</b></h3>
+            <h3 className='text-center text-3xl font-bold mb-5 md:mb-14'>Mis Proyect<b style={{ color: '#7c3aed' }}>os</b></h3>
             <Carousel
                 responsive={responsive(proyectosDB.length)}
                 infinite={true}
@@ -39,9 +39,11 @@ const Proyectos = ({
                 autoPlaySpeed={2000}
                 focusOnSelect={true}
                 className='h-auto'
-                style={{"@media (min-width: 640px)": {
-					gap: "300px !important",
-				}}}
+                style={{
+                    "@media (min-width: 640px)": {
+                        gap: "300px !important",
+                    }
+                }}
             >
                 {proyectosDB.map((proyecto) => (
                     <div className='card-proyecto bg-white rounded-lg shadow-lg hover:shadow-xl p-4 m-6 flex flex-col gap-3 max-h-96 min-w-[300px] max-w-[400px] mx-auto overflow-hidden mr-96 md:mr-0' key={proyecto.id}
@@ -51,7 +53,9 @@ const Proyectos = ({
                         >
                             <img src={proyecto.img} alt={proyecto.nombre} className='rounded-lg' />
                         </div> */}
-                        <iframe src={`https://${proyecto.link}`} title="Otra Página" className="card-iframe rounded overflow-hidden"></iframe>
+                        <iframe src={
+                            proyecto.link.includes('http') ? proyecto.link :
+                                `https://${proyecto.link}`} title="Otra Página" className="card-iframe rounded overflow-hidden"></iframe>
 
                         <h3 className='text-center text-xl font-bold h-32 max-h-full min-h-full block'>{proyecto.nombre}</h3>
                         {/* <p className='text-center'>{proyecto.descripcion}</p> */}
@@ -63,13 +67,18 @@ const Proyectos = ({
                             ))}
                         </div>
                         <div className='flex justify-center'>
-                            <a className='bg-violet-500 timeout hover:bg-violet-600 font-bold py-2 px-4 rounded hover:cursor-pointer hover:text-white text-white no-underline hover:no-underline font-bold py-2 px-4' onClick={() => window.open(`https://${proyecto.link}`, "_blank")}>Revisar Proyecto</a>
+                            <a className='bg-violet-500 timeout hover:bg-violet-600  rounded hover:cursor-pointer hover:text-white text-white no-underline hover:no-underline font-bold py-2 px-4'
+                                onClick={() => window.open(
+                                    proyecto.link.includes('http') ? proyecto.link :
+                                        `https://${proyecto.link}`
+                                    , "_blank")}>Revisar Proyecto</a>
                         </div>
                     </div>
-                ))}
+                ))
+                }
 
-            </Carousel>
-        </div>
+            </Carousel >
+        </div >
     )
 }
 
