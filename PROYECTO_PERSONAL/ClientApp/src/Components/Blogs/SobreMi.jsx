@@ -9,14 +9,19 @@ const SobreMi = () => {
     }
 
     const calcularEdad = (year, day, month) => {
-        const hoy = new Date()
-        const fechaNacimiento = new Date(year, month - 1, day)
-        const edad = hoy.getFullYear() - fechaNacimiento.getFullYear()
-        const diferenciaMeses = hoy.getMonth() - fechaNacimiento.getMonth()
-        if (diferenciaMeses < 0 || (diferenciaMeses === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+        let fecha = new Date()
+        let edad = fecha.getFullYear() - year
+
+        if (fecha.getMonth() < month - 1) {
             edad--
         }
-        return edad || ""
+
+        if (month - 1 == fecha.getMonth() && fecha.getDate() < day) {
+            edad--
+        }
+
+        return edad
+
     }
 
 
